@@ -1,0 +1,120 @@
+<%- include('partials/header'); -%>
+<body>
+
+    <div class="update-blog content">
+      
+    
+       <form> 
+        <label for="name">Event Name:</label>
+          <input type="text" id="name" name="name" placeholder="meeting"  value="<%=event.name%>"required>
+          <label for="location">Event location:</label>
+          <input type="text" id="location" name="location" placeholder="conference-room"   value="<%=event.name%>" required>
+        
+          <!-- <label for="stime">Start time</label>
+          <input type="text" id="stime" name="stime" placeholder="10:00am" required> -->
+          <label for="stime">Choose a staring time:</label>
+          <select id="stime" name="stime"  required>
+            <option value="<%=event.stime%>" selected disabled hidden><%=event.stime%></option>
+            <option value="9:00am">9:00am</option>
+            <option value="9:30am"> 9:30am</option>
+            <option value="10:00am"> 10:00am</option>
+            <option value="10:30am"> 10:30am</option>
+            <option value="11:00am"> 11:00am</option>
+            <option value="11:30am"> 11:30am</option>
+            <option value="12:00pm">12:00pm </option>
+            <option value="12:30pm"> 12:30pm</option>
+            <option value="1:00pm"> 1:00pm</option>
+            <option value="1:30pm"> 1:30pm</option>
+            <option value="2:00pm"> 2:00pm</option>
+            <option value="2:30pm"> 2:30pm</option>
+            <option value="3:00pm"> 3:00pm</option>
+            <option value="3:30pm"> 3:30pm</option>
+            <option value="4:00pm"> 4:00pm</option>
+            <option value="4:30pm"> 4:30pm</option>
+            <option value="5:00pm"> 5:00pm</option>
+            <option value="5:30pm"> 5:30pm</option>
+            <option value="6:00pm"> 6:00pm</option>
+            <option value="6:30pm"> 6:30pm</option>
+            <option value="7:00pm"> 7:00pm</option>
+            <option value="7:30pm"> 7:30pm</option>
+          </select>
+
+
+          <!-- <label for="etime">End time</label>
+          <input type="text" id="etime" name="etime" placeholder="7:00pm" required> -->
+
+        
+          <label for="etime">Choose a ending time:</label>
+          <select id="etime" name="etime" required>
+            <option value="<%=event.etime%>" selected disabled hidden><%=event.etime%></option>
+            <option value="9:00am">9:00am</option>
+            <option value="9:30am"> 9:30am</option>
+            <option value="10:00am"> 10:00am</option>
+            <option value="10:30am"> 10:30am</option>
+            <option value="11:00am"> 11:00am</option>
+            <option value="11:30am"> 11:30am</option>
+            <option value="12:00pm">12:00pm </option>
+            <option value="12:30pm"> 12:30pm</option>
+            <option value="1:00pm"> 1:00pm</option>
+            <option value="1:30pm"> 1:30pm</option>
+            <option value="2:00pm"> 2:00pm</option>
+            <option value="2:30pm"> 2:30pm</option>
+            <option value="3:00pm"> 3:00pm</option>
+            <option value="3:30pm"> 3:30pm</option>
+            <option value="4:00pm"> 4:00pm</option>
+            <option value="4:30pm"> 4:30pm</option>
+            <option value="5:00pm"> 5:00pm</option>
+            <option value="5:30pm"> 5:30pm</option>
+            <option value="6:00pm"> 6:00pm</option>
+            <option value="6:30pm"> 6:30pm</option>
+            <option value="7:00pm"> 7:00pm</option>
+            <option value="7:30pm"> 7:30pm</option>
+          </select>
+
+
+
+
+
+
+
+
+
+          <input type="text" hidden="true" id="snippet" name="ownerEmail" value="<%=user.email%>" required >
+    
+          <!-- <input type="text" hidden="true" id="snippet" name="ownerId" value=<%=user.id%> required >
+          <input type="text" hidden="true" id="snippet" name="ownerEmail" value=<%=user.email%> required > -->
+          <!-- <%-console.log(user.id)-%> -->
+          
+          
+          
+          <button class="frm-btn">Update</button>
+        </form>
+      </div>
+    
+      <script>
+        const form = document.querySelector('form');
+        
+    
+        form.addEventListener('submit', async(e) => {
+        const name=form.name.value
+        const location= form.location.value
+        const stime=form.stime.value
+        const etime=form.etime.value
+    
+          const res= fetch('/events/<%= event._id%>', {
+             method: 'PUT',
+             body: JSON.stringify({name,location,stime,etime}),
+             headers: {'Content-Type':'application/json'}
+            })
+            .then(result => result.json())
+            .then(data => {
+                if(data.success)
+                window.location.href = "/events/calendar"
+             })
+            
+     });
+     
+    
+      </script>
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,51 @@
+<%- include('partials/header'); -%>
+<body>
+
+    <div class="update-blog content">
+      
+    
+       <form> 
+        <label for="name">Event Name:</label>
+          <input type="text" id="name" name="name" placeholder="meeting"  value="<%=event.name%>"required>
+          <label for="location">Event location:</label>
+          <input type="text" id="location" name="location" placeholder="conference-room"   value="<%=event.location%>" required>
+        
+
+
+
+          <input type="text" hidden="true" id="snippet" name="ownerEmail" value="<%=user.email%>"" required >
+    
+          <!-- <input type="text" hidden="true" id="snippet" name="ownerId" value=<%=user.id%> required >
+          <input type="text" hidden="true" id="snippet" name="ownerEmail" value=<%=user.email%> required > -->
+          <!-- <%-console.log(user.id)-%> -->
+          
+          
+          
+          <button class="frm-btn">Update</button>
+        </form>
+      </div>
+    
+      <script>
+        const form = document.querySelector('form');
+        
+    
+        form.addEventListener('submit', async(e) => {
+        const name=form.name.value
+        const location= form.location.value
+          const res= fetch('/allevents/<%= event._id%>', {
+             method: 'PUT',
+             body: JSON.stringify({name,location}),
+             headers: {'Content-Type':'application/json'}
+            })
+            .then(result => result.json())
+            .then(data => {
+                if(data.success)
+                window.location.href = "/events/calendar"
+             })
+            
+     });
+     
+    
+      </script>
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,26 @@
+<%- include('partials/header'); -%>
+<body>
+
+    <div class="create-blog content">
+        <form action="/allevents" method="POST" class="post-form" >
+          <label for="name">Event Name:</label>
+          <input type="text" id="name" name="name" placeholder="meeting" required>
+          <label for="location">Event location:</label>
+          <input type="text" id="location" name="location" placeholder="conference-room" required>
+        
+         
+          <input type="text" hidden="true" id="snippet" name="ownerEmail" value="<%=user.email%>" required >
+    
+          <!-- <input type="text" hidden="true" id="snippet" name="ownerId" value=<%=user.id%> required >
+          <input type="text" hidden="true" id="snippet" name="ownerEmail" value=<%=user.email%> required > -->
+          <!-- <%-console.log(user.id)-%> -->
+          
+          <button class="frm-btn">Submit</button>
+        </form>
+      </div>
+      </body>
+
+      <%- include('partials/footer'); -%>
+
+
+      <!-- Ename: "sample Item",Eloc: "sample Location",sTime: "9:00am",eTime: "10:00am" -->

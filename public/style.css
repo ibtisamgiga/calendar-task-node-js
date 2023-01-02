@@ -1,0 +1,306 @@
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 10rem;
+    background-color: #e6e6e6;
+}
+
+.main {
+    background-color: white;
+    opacity: 95%;
+    min-height: 80rem;
+    min-width: 80rem;
+    z-index: 1;
+}
+
+#datesec {
+    display: flex;
+    height: 5rem;
+    background-color: whitesmoke;
+    border-bottom: 2px solid grey;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#datesec>p {
+    font-size: larger;
+    padding-right: 2rem;
+}
+
+#daily {
+    display: flex;
+    height: auto;
+    background-color: #e6e6e6;
+    justify-content: left;
+    align-items: flex-end;
+
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+#daily #evt {
+    display: flex;
+
+    width: 60rem;
+    height: 90%;
+    background-color: white;
+    border-left: 1rem solid rgb(0, 191, 0);
+    align-items: center;
+    justify-content: start;
+    text-indent: 0.5rem;
+}
+
+#evt>p,
+h1 {
+    font-size: larger;
+}
+
+#gry {
+    color: grey;
+}
+
+#dash {
+    font-size: 2rem;
+    color: grey;
+}
+
+#grn {
+    color: rgb(30, 143, 30);
+}
+
+/* Time Table */
+#AM {
+    display: flex;
+    height: 25rem;
+    border-top: 2px solid #96134d;
+    background-color: #fef6f8;
+}
+
+#PM {
+    display: flex;
+    height: 70rem;
+    border-top: 2px solid #47adf5;
+    background-color: #eefefe;
+}
+
+#red {
+    color: #96134d;
+}
+
+#blue {
+    color: #47adf5;
+}
+
+#time span {
+    font-size: 60px;
+    font-weight: lighter;
+    text-align: center;
+    text-indent: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 2rem;
+    padding-right: 1rem;
+    z-index: 0;
+}
+
+.clck {
+    display: flex;
+    width: 80rem;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.full {
+    display: flex;
+    flex-direction: row;
+
+    border-top: 1px solid #a5a3a3;
+    width: 95%;
+    height: 4rem;
+}
+
+.full1 {
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 4rem;
+}
+
+.half {
+    display: flex;
+    flex-direction: row;
+    color: #999798;
+    border-top: 1px solid #e3dfe0;
+    width: 85%;
+    height: 4rem;
+
+}
+
+/* Events */
+
+.event {
+
+
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-left: 1rem solid rgb(0, 191, 0);
+    justify-content: start;
+    text-indent: 0.5rem;
+    line-height: 3px;
+    z-index: 1;
+}
+
+.na{
+    display: flex;
+    flex-direction: row;
+}
+
+ul{
+    list-style-type: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  nav{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    height: 150px;
+    /* margin-bottom: 120px; */
+  }
+  nav ul{
+    display: flex;
+    align-items: center;
+  }
+  nav li{
+    margin-left: 20px;
+  }
+  nav li a{
+
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.0em;
+    display: block;
+    padding: 10px 16px;
+    letter-spacing: 2px;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+.ti>a{
+    color: whitesmoke;
+    margin-left: 10px;
+    font-size: 60px;
+}
+
+
+/* 
+.del-button{
+    border-radius: 30px;
+    background-color:red;
+     width: 100px;
+    height: 30px; 
+ 
+    margin-left: 10px;
+    color: whitesmoke;
+    text-align: center;
+} */
+/* 
+.update-button{
+    border-radius: 30px;
+    background-color:green;
+  
+     width: 100px;
+    height: 30px; 
+    margin-left: 10px;
+    color: whitesmoke;
+    text-align: center;
+
+} */
+
+
+
+.del-button {
+    display: none;
+  }
+      
+.event:hover .del-button {
+ 
+    display: inline-block;
+
+    border-radius: 30px;
+    background-color:red;
+     width: 100px;
+    height: 30px; 
+ 
+    margin-left: 10px;
+    color: whitesmoke;
+    text-align: center;}
+
+
+    .update-button {
+        display: none;
+      }
+         
+
+      .event:hover .update-button{
+     
+        display: inline-block;
+        border-radius: 30px;
+        background-color:green;
+      
+         width: 100px;
+        height: 30px; 
+        margin-left: 10px;
+        color: whitesmoke;
+        text-align: center;
+    
+    }
+
+
+
+
+
+
+
+    .del-button1 {
+        display: none;
+      }
+         
+
+    .allevent:hover  .del-button1 {
+     
+        display: inline-block;
+    
+        border-radius: 30px;
+        background-color:red;
+         width: 100px;
+        height: 30px; 
+     
+        margin-left: 10px;
+        color: whitesmoke;
+        text-align: center;}
+
+
+        .update-button1 {
+            display: none;
+          }
+             
+    
+          .allevent:hover .update-button1{
+            display: inline-block;
+            border-radius: 30px;
+            background-color:green;
+          
+             width: 100px;
+            height: 30px; 
+            margin-left: 10px;
+            color: whitesmoke;
+            text-align: center;
+        
+        }
